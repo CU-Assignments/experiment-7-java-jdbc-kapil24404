@@ -1,0 +1,23 @@
+package fetchemployee;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+public class FetchEmployee {
+    public static void main(String[] args) {
+        try (Connection conn = DBConnection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM Employee")) {
+
+            System.out.println("EmpID\tName\tSalary");
+            while (rs.next()) {
+                int id = rs.getInt("EmpID");
+                String name = rs.getString("Name");
+                double salary = rs.getDouble("Salary");
+                System.out.println(id + "\t" + name + "\t" + salary);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
