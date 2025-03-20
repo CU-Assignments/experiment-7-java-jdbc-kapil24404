@@ -1,0 +1,27 @@
+create database employeemanagement;
+use employeemanagement;
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Salary DOUBLE
+);
+
+CREATE TABLE Product (
+    ProductID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductName VARCHAR(100),
+    Price DOUBLE,
+    Quantity INT
+);
+
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Marks INT
+);
+
+INSERT INTO Employee (EmpID, Name, Salary) VALUES (101, 'Kapil', 50000);
+INSERT INTO Employee (EmpID, Name, Salary) VALUES (102, 'Garg', 60000);
+INSERT INTO Employee (EmpID, Name, Salary) VALUES (103, 'Abhi', 55000);
+INSERT INTO Employee (EmpID, Name, Salary) VALUES (104, 'Uday', 70000);
+
